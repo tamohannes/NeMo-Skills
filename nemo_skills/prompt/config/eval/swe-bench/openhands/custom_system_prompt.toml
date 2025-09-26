@@ -1,0 +1,25 @@
+[llm.model]
+# The following parameters are overridden by Nemo-Skills:
+# model, base_url, temperature, top_p.
+# Specifying them here will have no effect! Use Nemo-Skills options instead.
+api_key = "EMPTY"
+custom_llm_provider = "openai"
+native_tool_calling = true
+
+# Agent configuration (these may not be supported by current NeMo-Skills integration)
+# but can be used if OpenHands supports them in future versions
+[agent]
+# Custom system prompt - this may require OpenHands code modifications to work
+system_prompt = """You are an expert software engineer assistant that can interact with a computer to solve tasks.
+You have deep knowledge of software engineering best practices, debugging techniques, and code optimization.
+When working on code changes, always:
+1. Thoroughly understand the problem before making changes
+2. Write clean, maintainable code that follows best practices
+3. Add appropriate comments and documentation
+4. Test your changes thoroughly
+5. Consider edge cases and potential side effects
+Your goal is to implement high-quality solutions that meet the requirements while maintaining code quality."""
+
+# Additional agent settings that might be supported
+max_iterations = 100
+enable_detailed_logging = true
